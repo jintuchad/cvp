@@ -1,0 +1,55 @@
+{
+	"name": "chadmazilly/cvp",
+	"description": "The Laravel Framework.",
+	"keywords": ["framework", "laravel"],
+	"license": "MIT",
+	"require": {
+		"laravel/framework"             : "4.1.*",
+		"fideloper/proxy"               : "dev-master",
+		"way/generators"                : "dev-master",
+		"chadmazilly/smee"              : "dev-master",
+		"prologue/alerts"               : "dev-master",
+        "emberlabs/gravatarlib"         : "dev-master",
+        "thomaswelton/laravel-gravatar" : "dev-master",
+        "iron-io/iron_mq"               : "1.4.8"
+    },
+	"require-dev": {
+		"phpunit/phpunit"              : "3.7.*",
+		"mockery/mockery"              : "0.7.*",
+		"jlong/sass-twitter-bootstrap" : "v3.0.0",
+        "barryvdh/laravel-ide-helper"  : "1.*"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/database/migrations",
+			"app/database/seeds",
+			"app/tests/TestCase.php"
+		],
+		"files": [
+			"app/Cvp/helpers.php"
+		],
+		"psr-0": {
+			"Cvp": "app/"
+		}
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "stable"
+}
